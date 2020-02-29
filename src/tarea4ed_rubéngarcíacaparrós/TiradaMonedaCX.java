@@ -10,15 +10,15 @@ import java.util.Scanner;
 public class TiradaMonedaCX {
 
     public static void main(String[] args) {
-//las variables a y b servirán para guardar el resultado de la tirada de dos monedas
-        int a, b;
+//las variables operador1 y operador2 servirán para guardar el resultado de la tirada de dos monedas
+        int operador1, operador2;
         int contadorCaras = 0, contadorCruces = 0, numTiradas;
 //las variables contador1 y contador2 servirán para guardar el número de caras y cruces dobles consecutivas
         int cont1 = 0, cont2 = 0;
         int maximoCarasDoblesConsecutivas = 0, maximoCrucesDoblesConsecutivas = 0;
         boolean esCruzDoble = false, esCaraDoble = false;
-        String tirada1;
-        String tirada2;
+        String lanzamiento1;
+        String lanzamiento2;
         Scanner teclado = new Scanner(System.in);
 
         do {
@@ -27,27 +27,27 @@ public class TiradaMonedaCX {
         } while (numTiradas < 1 || numTiradas > 50);
 
         for (int i = 0; i < numTiradas; i++) {
-            a = (int) (Math.random() * 2);
-            b = (int) (Math.random() * 2);
+            operador1 = (int) (Math.random() * 2);
+            operador2 = (int) (Math.random() * 2);
 
-            if (a == 0) {
+            if (operador1 == 0) {
                 contadorCaras++;
-                tirada1 = "cara";
+                lanzamiento1 = "cara";
             } else {
                 contadorCruces++;
-                tirada1 = "cruz";
+                lanzamiento1 = "cruz";
             }
-            if (b == 0) {
+            if (operador2 == 0) {
                 contadorCaras++;
-                tirada2 = "cara";
+                lanzamiento2 = "cara";
             } else {
                 contadorCruces++;
-                tirada2 = "cruz";
+                lanzamiento2 = "cruz";
             }
-            System.out.println("Moneda 1: " + tirada1 + ", Moneda 2: " + tirada2);
+            System.out.println("Moneda 1: " + lanzamiento1 + ", Moneda 2: " + lanzamiento2);
 
-            if (a == b) {
-                if (a == 0) {
+            if (operador1 == operador2) {
+                if (operador1 == 0) {
                     esCaraDoble = true;
                     esCruzDoble = false;
                 } else {
